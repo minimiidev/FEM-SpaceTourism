@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Bellefair";
+    src: url("/assets/fonts/Bellefair-Regular.ttf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url("/assets/fonts/BarlowCondensed-Regular.ttf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+@theme {
+    --color-blue-light: #D0D6F9;
+    --color-blue-dark: #0B0D17;
+    --color-white: #F6F6F6;
+
+    --font-bellefair: "Bellefair", sans-serif;
+    --font-barlow: "Barlow", sans-serif;
+}
+
+
+@utility container {
+    padding-inline: 10px;
+    margin-inline: auto;
+
+    @variant md {
+        padding-inline: 40px;
+    }
+
+    @variant lg {
+        padding-inline: 80px;
+    }
+
+    @variant xl {
+        padding-inline: 120px;
+    }
+}
+
+body {
+    @apply bg-black dark:text-white;
+}
+
+.h1 {
+    @apply font-bellefair text-[80px] md:text-[144px];
+}
+
+.h2 {
+    @apply font-bellefair text-[56px] md:text-[100px];
+}
+
+.h3 {
+    @apply font-bellefair text-[28px] md:text-[56px];
+}
+
+.h4 {
+    @apply font-bellefair md:text-[32px] text-lg;
+}
+
+.h5 {
+    @apply font-bellefair md:text-[28px] text-base tracking-wide;
+}
+
+a,
+p,
+span {
+    @apply font-barlow text-[15px] md:text-base;
+}
+
+.p1 {
+    @apply font-barlow text-[18px] md:text-[22px];
+}
+
+.letter-spacing {
+    letter-spacing: 2px;
+}

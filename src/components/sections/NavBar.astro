@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+---
+
+<header class="top-0 left-0 z-10 fixed md:py-0 lg:pt-5 w-full">
+	<nav
+		class="flex justify-between items-center mx-auto px-4 md:pr-0 md:pl-8 lg:pl-28 h-24"
+	>
+		<div class="flex justify-between items-center">
+			<Image
+				src={`/assets/shared/logo.svg`}
+				alt="Logo"
+				width={48}
+				height={48}
+			/>
+
+			<div
+				class="hidden lg:block z-10 absolute bg-gray-500 ml-[8%] w-[30%] h-[1px]"
+			>
+			</div>
+		</div>
+
+		<a href="#" class="md:hidden uppercase">Menu</a>
+
+		<ul
+			class="hidden md:flex md:flex-1 justify-center items-center gap-12 bg-black/10 backdrop-blur-2xl w-2/3 md:min-w-1/2 md:max-w-[85%] lg:max-w-[60%] h-full uppercase"
+		>
+			<li class="">
+				<a href="/"><span class="pr-2 font-bold">00</span>Home</a>
+			</li>
+			<li>
+				<a href="/destinations"
+					><span class="pr-2 font-bold">01</span>Destinations</a
+				>
+			</li>
+			<li>
+				<a href="/crew"><span class="pr-2 font-bold">02</span>Crew</a>
+			</li>
+			<li>
+				<a href="/technology"
+					><span class="pr-2 font-bold">03</span>Technology</a
+				>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	@import "tailwindcss";
+
+	li {
+		@apply flex justify-center items-center border-transparent border-b-4 h-full;
+
+		& a {
+			@apply flex justify-center items-center h-full;
+		}
+
+		&:hover {
+			@apply border-white;
+		}
+	}
+
+	.active {
+		@apply border-white;
+	}
+</style>
+
+<!-- TODO: CHANGE THE ACTIVE CLASS -->
+
+<script>
+	const init = () => {
+		const links = document.querySelectorAll("header nav ul li");
+		console.log(links);
+		links.forEach((link) => {
+			link.addEventListener("click", () => {
+				// links.forEach((l) => l.classList.remove("active"));
+				link.classList.add("active");
+				console.log(link);
+			});
+		});
+	};
+
+	// document.addEventListener("DOMContentLoaded", init);
+	document.addEventListener("astro:page-load", init);
+</script>

@@ -1,0 +1,38 @@
+---
+// import { Picture } from "astro:assets";
+
+// import heroBgDesktop from "@/assets/home/background-home-desktop.jpg";
+// import heroBgTablet from "@/assets/home/background-home-tablet.jpg";
+// import heroBgMobile from "@/assets/home/background-home-mobile.jpg";
+---
+
+<section class="relative flex justify-center items-center w-full h-dvh">
+    <!-- TODO: Background -->
+    <img
+        src={"/assets/home/background-home-desktop.jpg"}
+        alt="Hero Background"
+        class={`absolute top-0 left-0 w-full h-full object-cover object-center z-[-1]`}
+    />
+
+    <article
+        class="flex lg:flex-row flex-col justify-center lg:justify-between items-center lg:self-end gap-6 md:gap-20 lg:pb-[80px] h-full lg:text-left text-center container"
+    >
+        <div class="lg:w-[540px]">
+            <h3 class="uppercase h5">So, you want to travel to</h3>
+            <h1 class="uppercase h1">Space</h1>
+            <p class="mx-auto md:w-2/3 lg:w-full md:p1">
+                Let’s face it; if you want to go to space, you might as well
+                genuinely go to outer space and not hover kind of on the edge of
+                it. Well sit back, and relax because we’ll give you a truly out
+                of this world experience!
+            </p>
+        </div>
+
+        <a
+            href="#explore"
+            class="flex justify-center items-center bg-white hover:bg-white/50 rounded-full size-32 md:size-72 text-black uppercase transition-colors duration-300 ease-in-out h4"
+        >
+            Explore
+        </a>
+    </article>
+</section>

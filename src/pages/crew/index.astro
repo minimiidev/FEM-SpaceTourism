@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Crew from "@/components/sections/Crew.tsx";
+
+import { crew } from "@/data.json";
+import SectionWrapper from "@/components/SectionWrapper.astro";
+import { fade } from "astro:transitions";
+---
+
+<Layout
+	title="Crew | Space Tourism"
+	transition:animate={fade({ duration: "0.4s" })}
+>
+	<SectionWrapper
+		image="/assets/crew/background-crew-desktop.jpg"
+		title="Meet your crew"
+		numberTitle="02"
+	>
+		<Crew client:only="react" crew={crew} />
+	</SectionWrapper>
+</Layout>

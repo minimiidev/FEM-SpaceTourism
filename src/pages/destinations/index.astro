@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Destinations from "@/components/sections/Destinations.tsx";
+
+import { destinations } from "@/data.json";
+import SectionWrapper from "@/components/SectionWrapper.astro";
+import { fade, slide } from "astro:transitions";
+---
+
+<Layout
+	title="Destinations | Space Tourism"
+	transition:animate={slide({ duration: "0.4s" })}
+>
+	<SectionWrapper
+		transition:persist
+		transition:animate="slide"
+		image="/assets/destination/background-destination-desktop.jpg"
+		title="Pick your destination"
+		numberTitle="01"
+	>
+		<Destinations client:only="react" destinations={destinations} />
+	</SectionWrapper>
+</Layout>

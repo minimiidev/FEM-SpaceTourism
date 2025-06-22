@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Technology from "@/components/sections/Technology.tsx";
+
+import { technology } from "@/data.json";
+import SectionWrapper from "@/components/SectionWrapper.astro";
+import { fade } from "astro:transitions";
+---
+
+<Layout
+	title="Crew | Space Tourism"
+	transition:animate={fade({ duration: "5.0s" })}
+>
+	<SectionWrapper
+		image="/assets/technology/background-technology-desktop.jpg"
+		title="The terminology..."
+		numberTitle="03"
+	>
+		<Technology client:only="react" technologies={technology} />
+	</SectionWrapper>
+</Layout>
