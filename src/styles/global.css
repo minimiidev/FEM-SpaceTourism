@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @font-face {
     font-family: "Bellefair";
     src: url("/assets/fonts/Bellefair-Regular.ttf") format("woff2");
@@ -47,8 +48,14 @@
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: light;
+    }
+}
+
 body {
-    @apply bg-black dark:text-white;
+    @apply bg-transparent text-white;
 }
 
 .h1 {
